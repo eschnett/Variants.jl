@@ -11,6 +11,10 @@ export variant, lefts, rights, partition_variants
 
 immutable VariantException <: Exception end
 
+# Idea:
+# Define wrapper types Left{T} and Right{T},
+# and the say typealias Variant{L,R} Union{Left{L}, Right{R}}
+
 immutable Variant{L,R}
     isleft::Bool
     value::Union{L,R}
